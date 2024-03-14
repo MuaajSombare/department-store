@@ -1,0 +1,39 @@
+server:
+  port: '8081'
+
+
+spring:
+  profiles:
+    active : qa
+---
+
+
+
+spring:
+  profiles : div
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    url: jdbc:mysql://127.0.0.1:3306/dcbapp
+    password: '1234'
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+
+---
+
+spring:
+  profiles : qa
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    url: jdbc:mysql://127.0.0.1:3306/dcbapp_qa
+    password: '1234'
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+
+
+
